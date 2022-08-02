@@ -1,5 +1,5 @@
 <h2>Motivation</h2>
-Play with react profiler api
+Play with react profiler api and check the impact of memo on the performance - rendering time of the List (actualDuration)
 
 <h2>Application</h2>
 render a list and button to add item on the end
@@ -49,10 +49,26 @@ render a list and button to add item on the end
   </tr>
 </table>
 
-<h2>Points of interests</h2>
+<h2>rendering without memo</h2>
+<p>looking at react dev tools -> Preformance -> Settings -> Highlight updates when component render. You will see that List is rendered and also ListItem</p>
+
+![fig1](./figs/figs-few-push-without-memo.png)
+
+
+<h2>rendering with memo</h2>
+
+<p>results are better compared to without</p>
+<p>looking at react dev tools -> Preformance -> Settings -> Highlight updates when component render. You will see that List is rendered but not ListItemWithMemo because of the memo</p>
+
+![fig2](./figs/figs-few-push-with-memo.png)
+
+
+
+<h2>General points of interests</h2>
 <ul>
 <li>actualDuration and baseDuration are the most important values</li>
-<li>it is insteresting that react is doing better job as more 'Push end' is done thus using the key attribute</li>
+<li>it is insteresting that react is doing better job as more 'Push end' . maybe not rendering existing node and just add the new one ,thus react is using key nicely</li>
+<li>I am using memo and not useMemo because it was not possible otherwise</li>
 </ul>
 
 

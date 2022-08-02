@@ -7,7 +7,7 @@ interface IProps{
 
 const ListItem : FC<IProps> = ({num}) => {
     return (
-        <div>{num}</div>
+        <span>{num}</span>
     );
 };
 

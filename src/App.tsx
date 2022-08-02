@@ -1,7 +1,6 @@
 import { Profiler } from "react";
-import List from "./List";
-
-const NUM_NUMBERS = 300;
+import List from "./components/List";
+import { NUM_NUMBERS, optimizeWithMemo } from "./constants";
 
 function App() {
   function renderHandler(
@@ -13,14 +12,15 @@ function App() {
     commitTime: number,
     interactions: any // i use any because Set<SchedulerInteraction> is not found
   ): void {
-    console.log(`id : ${id} \nphase : ${phase} \nactualDuration : ${actualDuration} \nbaseDuration : ${baseDuration} \nstartTime : ${startTime} \ncommitTime : ${commitTime} \ninteractions : ${interactions}`);
-    
+    console.log(
+      `id : ${id} \nphase : ${phase} \nactualDuration [ms] : ${actualDuration} \nbaseDuration [ms] : ${baseDuration} \nstartTime [ms] : ${startTime} \ncommitTime [ms] : ${commitTime} \ninteractions : ${interactions}`
+    );
   }
 
   return (
     <div>
       <Profiler id="List" onRender={renderHandler}>
-        <List numNumbers={NUM_NUMBERS} />
+        <List numNumbers={NUM_NUMBERS} optimizeWithMemo={optimizeWithMemo} />
       </Profiler>
     </div>
   );
