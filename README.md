@@ -30,7 +30,7 @@ render a list and button to add item on the end
   <tr>
     <td>baseDuration</td>
     <td>number</td>
-    <td>The estimated time in milliseconds that would be spent rendering the descendants without any memoisations. The delta between this and actualDuration should tell you how useful your React.memo and useMemo callls are (for more information about these calls, you can read <a href='https://blog.openreplay.com/improving-react-application-performance-react-memo-vs-usememo'>this article on memoisation in React</a></td>
+    <td>The estimated time in milliseconds that would be spent rendering the descendants without any memoisations. The delta between this and actualDuration should tell you how useful your React.memo and useMemo callls are (for more information about these calls, you can read <a href='https://blog.openreplay.com/improving-react-application-performance-react-memo-vs-usememo'>this article on memoisation in React. my remark : seems not relevant when memoization is used</a></td>
   </tr>
   <tr>
     <td>startTime</td>
